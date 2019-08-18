@@ -1,0 +1,9 @@
+{
+    "pages": [
+        "pages/beauty/beauty"
+    ],
+    "window": {
+        "navigationStyle": "custom"
+    },
+    "sitemapLocation": "sitemap.json"
+}

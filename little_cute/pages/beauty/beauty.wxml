@@ -1,0 +1,27 @@
+<!-- pages/beauty/beauty.wxml -->
+<image class="bg" src="{{image}}" mode="aspectFill"></image>
+<view class="result" wx:if="{{result}}">
+    <text>性别：{{result.gender>50?'♂':'♀'}}</text>
+    <text>年龄：{{result.age}}</text>
+    <text wx:if="{{ result.expression < 10 }}">表情：黯然伤神</text>
+    <text wx:elif="{{ result.expression < 20 }}">表情：半嗔半喜</text>
+    <text wx:elif="{{ result.expression < 30 }}">表情：似笑非笑</text>
+    <text wx:elif="{{ result.expression < 40 }}">表情：笑逐颜开</text>
+    <text wx:elif="{{ result.expression < 50 }}">表情：莞尔一笑</text>
+    <text wx:elif="{{ result.expression < 60 }}">表情：喜上眉梢</text>
+    <text wx:elif="{{ result.expression < 70 }}">表情：眉开眼笑</text>
+    <text wx:elif="{{ result.expression < 80 }}">表情：笑尽妖娆</text>
+    <text wx:elif="{{ result.expression < 90 }}">表情：心花怒放</text>
+    <text wx:else>一笑倾城</text>
+    <text>颜值：{{result.beauty}}(0-100)</text>
+    <text wx:if="{{result.glass===1}}">你好丫四眼仔~</text>
+
+</view>
+<button class="confirm" wx:if="{{result}}" bindtap="confirm">确定</button>
+<view class="controls" wx:if="{{!result}}">
+    <view class="remind">点击拍照,长按选择照片</view>
+    <button class="but" bindtap="handclick" bindlongpress="handclick">
+        <view class="icon"></view>
+        <text>拍拍看</text>
+    </button>
+</view>
